@@ -20,6 +20,7 @@ class GameManager {
     var timeExtension: Double = 0.15
     var playerDirection: Direction = .left
     var currentScore: Int = 0
+    var gamePaused: Bool = false
     
     init(scene: GameScene) {
         self.scene = scene
