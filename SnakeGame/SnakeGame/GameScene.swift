@@ -160,6 +160,20 @@ class GameScene: SKScene {
         path.addLines(between: [topCorner, bottomCorner, middle])
         playButton.path = path
         self.addChild(playButton)
+        
+         pauseButton = SKShapeNode()
+            pauseButton.name = "pause_button"
+            pauseButton.zPosition = 1
+            pauseButton.position = CGPoint(x: 0, y: (frame.size.height / -2) + 200)
+            pauseButton.fillColor = SKColor.systemPurple
+            let righttopCorner = CGPoint(x: -50, y: 50)
+            let rightbottomCorner = CGPoint(x: -100, y: 50)
+            let lefttopCorner = CGPoint(x: 100, y: -50)
+            let leftbottomCorner = CGPoint(x: 50, y: -50)
+            path.addLine(to: topCorner)
+            path.addLines(between: [righttopCorner, rightbottomCorner, lefttopCorner, leftbottomCorner])
+            pauseButton.path = path
+            self.addChild(pauseButton)
     }
 }
 
