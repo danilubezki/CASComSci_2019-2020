@@ -20,6 +20,7 @@ class GameManager {
     var timeExtension: Double = 0.15
     var playerDirection: Direction = .left
     var currentScore: Int = 0
+    var gamePaused: Bool = false
     
     init(scene: GameScene) {
         self.scene = scene
@@ -187,12 +188,12 @@ class GameManager {
     func renderChange() {
         for (node, x, y) in scene.gameArray {
             if contains(a: scene.playerPositions, v: (x,y)) {
-                node.fillColor = SKColor.cyan
+                node.fillColor = SKColor.systemYellow
             } else {
                 node.fillColor = SKColor.clear
                 if scene.scorePos != nil {
                     if Int((scene.scorePos?.x)!) == y && Int((scene.scorePos?.y)!) == x {
-                        node.fillColor = SKColor.red
+                        node.fillColor = SKColor.systemPurple
                     }
                 }
             }
